@@ -4,36 +4,41 @@
 }
 
 <h4>Choose a Date for Pick Up</h4>
-<form class="needs-validation" novalidate>
+@using (Html.BeginForm("Index", "Schedule", FormMethod.Post))
+{
     <div class="row">
-        <div class="col-md-5 mb-3">
-            <label for="country">Country</label>
-            <select class="custom-select d-block w-100" id="country" required>
-                <option value="">Choose...</option>
-                <option>United States</option>
-            </select>
-            <div class="invalid-feedback">
-                Please select a valid country.
-            </div>
+        <div class="col-md-4 col-lg-4 col-xl-4 mb-3">
+            <label for="pickUpDate">Pick Up Date</label>
+            <input type="text" class="form-control" id="pickUpDate" required>
         </div>
-        <div class="col-md-4 mb-3">
-            <label for="state">State</label>
-            <select class="custom-select d-block w-100" id="state" required>
-                <option value="">Choose...</option>
-                <option>California</option>
-            </select>
-            <div class="invalid-feedback">
-                Please provide a valid state.
-            </div>
-        </div>
-        <div class="col-md-3 mb-3">
-            <label for="zip">Zip</label>
-            <input type="text" class="form-control" id="zip" placeholder="" required>
-            <div class="invalid-feedback">
-                Zip code required.
+        <div class="col-md-8 col-lg-8 col-xl-8">
+            <div class="alert alert-info" role="alert">
+                <ul class="list-unstyled mb-0">
+                    <li>
+                        Pick Up Times
+                        <ul>
+                            <li>Fridays; 4:00 PM to 7:00 PM</li>
+                            <li>Saturdays; 10:00 AM to 12:00 PM</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
     <hr class="mb-4">
-    <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
-</form>
+    <button class="btn btn-primary btn-lg btn-block" type="submit">Continue</button>
+}
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $("#pickUpDate").datepicker({
+                minDate: 0,
+                maxDate: "+3M",
+                beforeShowDay: function (date) {
+                    return [date.getDay() == 5 || date.getDay() == 6];
+                }
+            });
+        });
+    </script>
+}

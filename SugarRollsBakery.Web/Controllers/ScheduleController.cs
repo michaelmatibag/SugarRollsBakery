@@ -8,5 +8,11 @@ namespace SugarRollsBakery.Web.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Index(string temporary)
+        {
+            return RedirectToAction("Index", "Product");
+        }
     }
 }
