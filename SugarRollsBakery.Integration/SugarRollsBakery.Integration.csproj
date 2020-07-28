@@ -63,6 +63,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IProductService.cs" />
+    <Compile Include="Services\ProductService.cs" />
     <Compile Include="Stripe\IStripePriceService.cs" />
     <Compile Include="Stripe\IStripeProductService.cs" />
     <Compile Include="Stripe\StripePriceService.cs" />
@@ -71,6 +73,11 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\SugarRollsBakery.Domain\SugarRollsBakery.Domain.csproj">
+      <Project>{c2086f7e-d5f2-466a-8aa1-3b736bc3fc55}</Project>
+      <Name>SugarRollsBakery.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

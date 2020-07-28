@@ -119,15 +119,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ProductServiceTests.cs" />
     <Compile Include="Stripe\IStripeConfiguration.cs" />
     <Compile Include="Stripe\StripePriceServiceTests.cs" />
     <Compile Include="Stripe\StripeProductServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SugarRollsBakery.Domain\SugarRollsBakery.Domain.csproj">
+      <Project>{C2086F7E-D5F2-466A-8AA1-3B736BC3FC55}</Project>
+      <Name>SugarRollsBakery.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SugarRollsBakery.Infrastructure\SugarRollsBakery.Infrastructure.csproj">
       <Project>{c947f07a-744e-4468-87c1-4501dcc28ec3}</Project>
       <Name>SugarRollsBakery.Infrastructure</Name>
