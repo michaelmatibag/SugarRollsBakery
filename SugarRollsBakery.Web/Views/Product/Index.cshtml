@@ -18,9 +18,17 @@
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
+                                <p class="card-text">$@product.Price.ToString("0.00")</p>
                                 <h5 class="card-title">@product.Name</h5>
                                 <p class="card-text">@product.Description</p>
-                                <p class="card-">$@product.Price.ToString("0.00") per @product.Unit</p>
+                                <div class="input-group" style="width: 200px;">
+                                    <input type="number" value="1" class="form-control">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" type="button">
+                                            Add to cart
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
