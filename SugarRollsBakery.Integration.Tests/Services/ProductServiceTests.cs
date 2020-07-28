@@ -3,7 +3,6 @@ using Shouldly;
 using SugarRollsBakery.Infrastructure.Configuration;
 using SugarRollsBakery.Infrastructure.Services;
 using SugarRollsBakery.Integration.Stripe;
-using SugarRollsBakery.Integration.Tests.Stripe;
 using StripeNet = Stripe;
 
 namespace SugarRollsBakery.Integration.Tests.Services

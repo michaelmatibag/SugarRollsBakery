@@ -56,6 +56,9 @@
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Stripe.net, Version=37.26.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stripe.net.37.26.0\lib\net461\Stripe.net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -138,6 +141,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -284,7 +288,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -296,6 +299,20 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SugarRollsBakery.Domain\SugarRollsBakery.Domain.csproj">
+      <Project>{C2086F7E-D5F2-466A-8AA1-3B736BC3FC55}</Project>
+      <Name>SugarRollsBakery.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SugarRollsBakery.Infrastructure\SugarRollsBakery.Infrastructure.csproj">
+      <Project>{C947F07A-744E-4468-87C1-4501DCC28EC3}</Project>
+      <Name>SugarRollsBakery.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SugarRollsBakery.Integration\SugarRollsBakery.Integration.csproj">
+      <Project>{18D94459-EAAA-4027-B114-81A2992A561A}</Project>
+      <Name>SugarRollsBakery.Integration</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

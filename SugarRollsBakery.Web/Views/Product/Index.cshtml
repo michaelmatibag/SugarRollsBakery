@@ -1,6 +1,65 @@
-﻿@{
+﻿@model SugarRollsBakery.Web.Models.ProductModel
+
+@{
     ViewBag.Title = "Product";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Choose Products</h2>
+<div class="row">
+    <div class="col-md-8 order-md-1">
+        @{
+            foreach (var product in Model.Products)
+            {
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="@product.Image" class="card-img" alt="@product.Name">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">@product.Name</h5>
+                                <p class="card-text">@product.Description</p>
+                                <p class="card-">$@product.Price.ToString("0.00") per @product.Unit</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+    <div class="col-md-4 order-md-2">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Your cart</span>
+            <span class="badge badge-secondary badge-pill">3</span>
+        </h4>
+        <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+                <div>
+                    <h6 class="my-0">Product name</h6>
+                    <small class="text-muted">Brief description</small>
+                </div>
+                <span class="text-muted">$12</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+                <div>
+                    <h6 class="my-0">Second product</h6>
+                    <small class="text-muted">Brief description</small>
+                </div>
+                <span class="text-muted">$8</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+                <div>
+                    <h6 class="my-0">Third item</h6>
+                    <small class="text-muted">Brief description</small>
+                </div>
+                <span class="text-muted">$5</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+                <span>Total (USD)</span>
+                <strong>$20</strong>
+            </li>
+        </ul>
+    </div>
+</div>
+<button class="btn btn-primary btn-lg btn-block" type="submit">Checkout</button>
